@@ -15,7 +15,6 @@ The purpose of this project is to provide a simple and easy-to-understand exampl
 - For hosting server code, you can use some free services like:
     - [replit.com](https://replit.com/) 🌐
     - [glitch.com](https://glitch.com/) 🎛️
-    - [heroku.com](https://heroku.com/) 🌩️
       
 ## Configuration
 - Obtain a Telegram Bot API token by creating a new bot on the [BotFather](https://telegram.me/BotFather) website. 🤖
