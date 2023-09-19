@@ -51,9 +51,16 @@ def error_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Main function
 if __name__ == '__main__':
     print('Polling...')
-    app = Application.builder().token(TOKEN).build()# Create the Application instance
-    app.add_handler(CommandHandler('start', start_command))# Add the handlers for the '/start' and '/help' commands
-    app.add_handler(CommandHandler('help', help_command))# Add the handler for the message handler
-    app.add_handler(MessageHandler(filters.TEXT, message_handler))# Add the error handler
-    app.add_error_handler(error_handler)  # Add the error handler
-    app.run_polling()# Start the polling loop
+    # Create the Application instance with the token
+    app = Application.builder().token(TOKEN).build()
+    # Add the handler for the '/start' command
+    app.add_handler(CommandHandler('start', start_command))
+    # Add the handler for the '/help' command
+    app.add_handler(CommandHandler('help', help_command))
+    # Add the handler for any text message
+    app.add_handler(MessageHandler(filters.TEXT, message_handler))
+    # Add the handler for any error
+    app.add_handler(ErrorHandler(error_handler))
+    # Start the polling loop
+    app.run_polling()
+
